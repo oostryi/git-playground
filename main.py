@@ -24,6 +24,10 @@ def guess_is_valid(candidate):
     return True
 
 
+def repetitive_word(candidate):
+    return candidate in guesses
+
+
 guessed = 0
 errors = 0
 
@@ -44,6 +48,10 @@ while not is_game_over():
     guess = input("Your next take: ")
 
     if not guess_is_valid(guess):
+        continue
+
+    if repetitive_word is True:
+        print(f"Sorry, you have already used the word {guess}, try another one")
         continue
 
     if guess in full_list:
