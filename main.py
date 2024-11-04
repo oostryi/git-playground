@@ -64,3 +64,6 @@ while not is_game_over():
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+        if errors == ERRORS_TO_LOSE:
+            print("You have 0 lives left. You lost.")
+            exit()
